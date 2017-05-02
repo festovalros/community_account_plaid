@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+
+<record id="plaid_account_journal_inherit_view_form" model="ir.ui.view">
+            <field name="name">plaid_account_journal_form_inherit</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form" />
+            <field name="arch" type="xml">                
+                <xpath expr="//page[@name='bank_account']" position="after">
+                    <page name="plaid_conf" string="Plaid" attrs="{'invisible': [('type', '!=', 'bank')]}">
+                        <group col="2" colspan="4">
+                            <field name="plaid_user"/>
+                            <field name="plaid_password"/>
+                            <field name="access_token"/>
+                            <field name="plaid_active"/>
+                        </group>
+                    </page>
+                    <newline/>
+                </xpath>
+            </field>
+</record> 
+
+</data>
+</openerp>

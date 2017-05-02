@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+
+<record id="plaid_cron" model="ir.cron">
+            <field name="name">plaid cron</field>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="model">account.bank.statement</field>
+            <field name="function">load_statements_line_from_plaid</field>
+            <field name="args">()</field>
+</record> 
+
+</data>
+</openerp>
